@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171515649-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171515649-1');
+    </script>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Party Counter</title>
+</head>
+
+<body id="loader">
+    <header class="header-fixed">
+
+        <div class="header-limiter">
+
+            <h1><a href="/">Party Counter App</a></h1>
+
+        </div>
+
+    </header>
+    <section>
+
+        <form id="load-server" class="col s12">
+            <div class="input-field col s12">
+                <p>Counter Name</p>
+                <input id="server" type="text" class="validate " required="required" pattern="[a-zA-Z0-9-]+" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-]/g, '').replace(/(\..*)\./g, '$1');">
+                <p class="helper-text" id="helper">Enter a unique name for your counter</p>
+                <p>If you're helping count, just enter the name of that counter</p>
+
+            </div>
+
+            <div class="button" id="submit">Load</div>
+
+
+        </form>
+    </section>
+    <br /><br />
+    <footer>
+        <nav><a href="https://mathewsteininger.com" target="_blank">Made by Mat</a></nav>
+    </footer>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/6.0.3/pusher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+    <script src="start.js"></script>
+    <script src="cookies.js"></script>
+
+
+</body>
+
+</html>

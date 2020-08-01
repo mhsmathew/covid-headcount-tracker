@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    background: url('https://www.freevector.com/uploads/vector/preview/30355/Fluid_Gradient_Background.jpg');
+    background-size: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#svg_form_time {
+    height: 15px;
+    max-width: 80%;
+    margin: 40px auto 20px;
+    display: block;
+}
+
+#svg_form_time circle,
+#svg_form_time rect {
+    fill: white;
+}
+
+.button {
+    background: rgb(237, 40, 70);
+    border-radius: 100px;
+    padding: 15px 25px;
+    display: inline-block;
+    margin: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.disabled {
+    display: none;
+}
+
+section {
+    padding: 50px 100px 70px;
+    max-width: 400px;
+    margin: 30px auto;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+input {
+    width: 100%;
+    margin: 5px 0px;
+    display: inline-block;
+    padding: 15px 25px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    border: 1px solid lightgrey;
+    font-size: 1em;
+    font-family: inherit;
+    background: white;
+}
+
+p {
+    margin: 5px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+ ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #707070;
+    opacity: 1;
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #707070;
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #707070;
+}
+
+.disabledInput {
+    color: black;
+}
+
+.header-fixed {
+    background-color: transparent;
+    padding: 20px 40px;
+    height: 80px;
+    color: #ffffff;
+    box-sizing: border-box;
+    top: -100px;
+    -webkit-transition: top 0.3s;
+    transition: top 0.3s;
+}
+
+.header-fixed .header-limiter {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+
+/*	The header placeholder. It is displayed when the header is fixed to the top of the
+      browser window, in order to prevent the content of the page from jumping up. */
+
+.header-fixed-placeholder {
+    height: 80px;
+    display: none;
+}
+
+
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+    float: center;
+    font: normal 28px;
+    line-height: 40px;
+    margin: 0;
+}
+
+.header-fixed .header-limiter h1 span {
+    color: #102d5f;
+}
+
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+    font: 16px;
+    line-height: 40px;
+    float: right;
+}
+
+.header-fixed .header-limiter nav a {
+    display: inline-block;
+    padding: 0 5px;
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover {
+    opacity: 1;
+}
+
+.header-fixed .header-limiter nav a.selected {
+    color: #608bd2;
+    pointer-events: none;
+    opacity: 1;
+}
+
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+    padding: 10px 40px;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+body.fixed .header-fixed-placeholder {
+    display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+    line-height: 28px;
+    font-size: 13px;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+    .header-fixed {
+        padding: 20px 0;
+        height: 75px;
+    }
+    .header-fixed .header-limiter h1 {
+        float: none;
+        margin: -8px 0 10px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+    }
+    .header-fixed .header-limiter nav {
+        line-height: 1;
+        float: none;
+    }
+    .header-fixed .header-limiter nav a {
+        font-size: 13px;
+    }
+    body.fixed .header-fixed {
+        display: none;
+    }
+}
+
+a:visited {
+    color: white;
+}
+
+.container {
+    padding-top: 50px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171515649-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171515649-1');
+    </script>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Mat's Counting App</title>
+
+</head>
+
+<body id="loader">
+    <header class="header-fixed">
+
+        <div class="header-limiter">
+
+            <h1><a href="/">Party Counter App</a></h1>
+
+        </div>
+
+    </header>
+    <div id="svg_wrap"></div>
+    <section>
+        <p>Are you sure you want to create the following new counter?</p>
+        <input id="serverForm" type="text" placeholder="Server Name" readonly="readonly" onfocus="this.blur();" tabindex="-1" class="disabledInput" />
+    </section>
+    <section>
+        <p>Background Information</p>
+        <input id="organization" type="text" placeholder="Organization/Name" />
+        <input id="city" type="text" placeholder="City" />
+    </section>
+
+    <section>
+        <p>Do you want an emailed report of this data?</p>
+        <input id="email" type="email" placeholder="Email address" />
+    </section>
+
+    <div class="button" id="prev">&larr; Previous</div>
+    <div class="button" id="next">Next &rarr;</div>
+    <div class="button" id="submit">Submit</div>
+    <footer>
+        <nav><a href="https://mathewsteininger.com" target="_blank">Made by Mat</a></nav>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/6.0.3/pusher.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+<script src="cookies.js"></script>
+<script src="form.js"></script>
+
+</html>

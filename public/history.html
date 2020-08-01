@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171515649-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171515649-1');
+    </script>
+
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/6.0.3/pusher.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- Compiled and minified CSS -->
+    <script>
+        var type = "add";
+
+        function lastClicked(last) {
+            type = last;
+        }
+    </script>
+    <style>
+        .stats {
+            padding-top: 20px;
+            font-size: 20px;
+            color: white;
+            margin: 10px;
+        }
+    </style>
+
+    <title>Party Counter</title>
+</head>
+
+<body>
+
+    <header class="header-fixed">
+
+        <div class="header-limiter">
+
+            <h1><a href="/">Party Counter App</a></h1>
+
+        </div>
+
+    </header>
+    <div>
+        <h1 id="serName" class="stats">Event Date: </h1>
+        <h1 id="mostPeople" class="stats">Highest Attendance: </h1>
+        <h1 id="totalPeople" class="stats">Total Throughput: </h1>
+        <h1 id="bestHour" class="stats">Most Popular Hour: </h1>
+        <h1 id="worstHour" class="stats">Hour Where Most People Left: </h1>
+        <h1 id="bestHour2" class="stats">Hour Where Most People Came: </h1>
+
+
+
+    </div>
+    <div class="container">
+
+
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    </div>
+
+
+    <footer>
+        <nav style="background-color: transparent;"><a style="text-decoration: underline;" href="https://mathewsteininger.com" target="_blank">Made by Mat</a>
+        </nav>
+    </footer>
+
+</body>
+
+<script src="history.js"></script>
+
+</html>
