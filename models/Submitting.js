@@ -32,6 +32,14 @@ const SubmissionSchema = new Schema({
         type: String,
         required: false,
     },
+    token: {
+        type: String,
+        required: false,
+    },
+    refresh: {
+        type: String,
+        required: false,
+    }
 });
 
 // Create collection and add schema

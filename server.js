@@ -11,6 +11,7 @@ const poll = require("./routes/poll");
 const load = require("./routes/load");
 const sessions = require("./routes/sessions");
 const clear = require("./routes/clear");
+const spotify = require("./routes/spotify");
 require('dotenv').config();
 
 // Set public folder and fix extensions
@@ -35,16 +36,17 @@ app.use(session({
 app.use(cors());
 app.use("/poll", poll);
 app.use("/load", load);
+app.use("/spotify", spotify)
 app.use("/sessions", sessions);
 app.use("/clear", clear);
 
 // Run cron job to close old servers every hour
-cron.schedule("0 * * * *", function() {
+cron.schedule("0 * * * *", function () {
     request(app)
         .get('/clear/v1')
         .end();
 });
 
-const port = 80;
+const port = 3000;
 // Start server
 app.listen(port, () => console.log(`Server started on port ${port}`));

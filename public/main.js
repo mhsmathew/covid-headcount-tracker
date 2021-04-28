@@ -1,9 +1,8 @@
 var serverName;
 
-
-$(document).ready(function() {
+$(document).ready(function () {
     // Make sure we have a valid session
-    getSession().then(function(result) {
+    getSession().then(function (result) {
         serverName = result;
         $("#serName").append(serverName);
         if (!serverName) {
@@ -52,19 +51,19 @@ $(document).ready(function() {
                             data: [{
                                 type: "area",
                                 dataPoints: dataPoints,
-                            }, ],
+                            },],
                         });
                         chart.render();
                         // Connects to pusher, pretty much a web socket
                         var pusher = new Pusher("e8bd22ca9d4338e305fe", {
                             cluster: "us2",
                         });
-                        pusher.connection.bind('error', function(error) {
+                        pusher.connection.bind('error', function (error) {
                             location.reload();
                         });
                         // Channel is the server name
                         var channel = pusher.subscribe("counter-" + serverName);
-                        channel.bind("counter-vote", function(data) {
+                        channel.bind("counter-vote", function (data) {
                             totalVotes = data.total;
                             let newPoint = {
                                 "x": new Date(data.time),
@@ -75,6 +74,20 @@ $(document).ready(function() {
                             chart.render();
                         });
                     }
+                });
+            // Get spotify info
+            fetch("/spotify/get")
+                .then((res) => res.json())
+                .then((data) => {
+                    // Check if has token
+                    if (data.info) {
+                        $("#login").hide();
+                        $("#loggedin").show();
+                    } else {
+                        $("#login").show();
+                        $("#loggedin").hide();
+                    }
+                    console.log(data);
                 });
         }
     });
@@ -91,12 +104,12 @@ form.addEventListener("click", (e) => {
         server: serverName
     };
     fetch("/poll", {
-            method: "post",
-            body: JSON.stringify(data),
-            headers: new Headers({
-                "Content-Type": "application/json",
-            }),
-        })
+        method: "post",
+        body: JSON.stringify(data),
+        headers: new Headers({
+            "Content-Type": "application/json",
+        }),
+    })
         .then((res) => res.json())
         .catch((err) => console.log(err));
     e.preventDefault();
